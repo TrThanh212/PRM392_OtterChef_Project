@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/layout_toolbar"
+        layout="@layout/layout_toolbar"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.65"
+        android:scaleType="fitCenter"
+        android:src="@drawable/otterchef"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/semi_transparent_white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/define_dimen_18">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_30"
+                android:gravity="center"
+                android:text="@string/label_register"
+                android:textColor="@color/main_brown"
+                android:textSize="@dimen/define_dimen_30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_30"
+                android:text="@string/label_email"
+                android:textColor="@color/main_brown"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:background="@drawable/bg_white_corner_30_border_brown"
+                android:hint="@string/hint_email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/define_dimen_14"
+                android:textColor="@color/textColorHeading"
+                android:textColorHint="@color/textColorAccent"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_14"
+                android:text="@string/label_password"
+                android:textColor="@color/main_brown"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:background="@drawable/bg_white_corner_30_border_brown"
+                android:hint="@string/hint_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:padding="@dimen/define_dimen_14"
+                android:textColor="@color/textColorHeading"
+                android:textColorHint="@color/textColorAccent"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_14"
+                android:text="@string/label_comfirm_password"
+                android:textColor="@color/main_brown"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:background="@drawable/bg_white_corner_30_border_brown"
+                android:hint="@string/hint_confirm_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:padding="@dimen/define_dimen_14"
+                android:textColor="@color/textColorHeading"
+                android:textColorHint="@color/textColorAccent"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_20"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_admin"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rdb_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/define_dimen_20"
+                    android:text="@string/label_user"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_30"
+                android:background="@drawable/bg_button_disable_corner_10"
+                android:text="@string/label_register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/semi_transparent_white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/define_dimen_18">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_have_account"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/define_dimen_6"
+                android:text="@string/label_login"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

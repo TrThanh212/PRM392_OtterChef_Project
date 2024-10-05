@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">OTTER CHEF</string>
+    <string name="switch_label">VN</string>
+    <string name="switch_title">Ngôn Ngữ:</string>
+    <string name="text_language">Tiếng Việt</string>
+    <string name="btn_change_language">Thay đổi</string>
+
+    // action
+    <string name="action_ok">Đồng ý</string>
+    <string name="action_cancel">Hủy bỏ</string>
+    <string name="action_open">Mở</string>
+    <string name="action_close">Đóng</string>
+    <string name="action_add">Thêm</string>
+    <string name="action_edit">Cập nhật</string>
+
+    // Menu
+    <string name="menu_category">Thể loại</string>
+    <string name="menu_food">Món ăn</string>
+    <string name="menu_require">Yêu cầu</string>
+    <string name="menu_feedback">Phản hồi</string>
+    <string name="menu_account">Tài khoản</string>
+
+    // Hint
+    <string name="hint_email">Nhập email của bạn</string>
+    <string name="hint_password">Nhập mật khẩu của bạn</string>
+    <string name="hint_password_old">Vui lòng nhập mật khẩu cũ…</string>
+    <string name="hint_password_new">Vui lòng nhập mật khẩu mới…</string>
+    <string name="hint_password_confirm">Vui lòng xác nhận mật khẩu mới…</string>
+    <string name="hint_food_name">Tên món ăn…</string>
+    <string name="hint_rating_review">Hãy cho chúng tôi biết đánh giá của bạn</string>
+    <string name="hint_search_category">Tên thể loại…</string>
+
+    // Label
+    <string name="label_facebook">Facebook</string>
+    <string name="label_call">Call Phone</string>
+    <string name="label_gmail">Gmail</string>
+    <string name="label_skype">Skype</string>
+    <string name="label_youtube">Youtube</string>
+    <string name="label_zalo">Zalo</string>
+    <string name="label_user_name">Email</string>
+    <string name="label_old_password">Mật khẩu cũ</string>
+    <string name="label_new_password">Mật khẩu mới</string>
+    <string name="label_confirm_new_password">Xác nhận mật khẩu mới</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Mật khẩu</string>
+    <string name="label_register">Đăng Ký</string>
+    <string name="label_have_account">Đã có tài khoản?</string>
+    <string name="label_have_not_account">Chưa có tài khoản?</string>
+    <string name="label_login">Đăng Nhập</string>
+    <string name="label_forgot_password">Quên mật khẩu?</string>
+    <string name="label_rate_review">Xếp hạng &amp; đánh giá</string>
+
+    <string name="label_sign_out">Đăng xuất</string>
+    <string name="label_reset_password">Gửi lại mật khẩu</string>
+    <string name="label_what_cook">Bạn muốn chúng tôi hướng dẫn nấu món gì?</string>
+    <string name="label_category">Thể loại</string>
+    <string name="label_my_kitchen">Bếp của tôi</string>
+    <string name="label_other_feature">Tính năng khác</string>
+    <string name="label_account">Tài khoản</string>
+    <string name="label_favorite">Yêu thích</string>
+    <string name="label_history">Lịch sử</string>
+    <string name="label_feedback">Phản hồi</string>
+    <string name="label_contact">Liên hệ</string>
+    <string name="label_change_password">Đổi mật khẩu</string>
+    <string name="label_search">Tìm kiếm</string>
+
+    <string name="label_feedback_name">Họ và tên (*)</string>
+    <string name="label_feedback_email">Email</string>
+    <string name="label_feedback_phone">Số điện thoại</string>
+    <string name="label_feedback_comment">Nội dung (*)</string>
+    <string name="label_send_feedback">Gửi phản hồi</string>
+
+    <string name="label_request_food_title">Yêu cầu hướng dẫn nấu ăn</string>
+    <string name="label_request_food_content">Hãy cho Otter biết món ăn bạn muốn thêm vào ứng dụng nha!</string>
+    <string name="label_send_request">Gửi yêu cầu</string>
+
+    <string name="label_view_all">Xem tất cả</string>
+    <string name="label_count_favorite">lượt thích</string>
+    <string name="label_count_history">lượt xem</string>
+    <string name="label_food_popular">Món ăn phổ biến</string>
+    <string name="label_food_detail">Hướng dẫn chi tiết</string>
+    <string name="label_rating">Xếp hạng</string>
+    <string name="label_review">Đánh giá</string>
+    <string name="label_review_note">*Đánh giá sẽ được hiển thị công khai</string>
+    <string name="label_send_review">Gửi đánh giá</string>
+    <string name="label_rating_review_food">Bạn cảm thấy bài viết hướng dẫn nấu món ăn này của chúng tôi như thế nào?</string>
+    <string name="label_admin">Quản trị viên</string>
+    <string name="label_user">Người dùng</string>
+
+    <string name="label_name">Tên(*)</string>
+    <string name="label_image">Hình ảnh(*)</string>
+    <string name="label_food_category">Category(*)</string>
+    <string name="label_add_category">Thêm thể loại</string>
+    <string name="label_update_category">Cập nhật thể loại</string>
+    <string name="label_featured">Nổi bật:</string>
+    <string name="label_category_admin">Thể loại:</string>
+    <string name="label_food_link_url">Link url chi tiết(*)</string>
+    <string name="label_food_featured">Nổi bật</string>
+    <string name="label_add_food">Thêm món ăn</string>
+    <string name="label_update_food">Cập nhật món ăn</string>
+
+    // Message
+    <string name="msg_please_waiting">Please wait…</string>
+    <string name="msg_exit_app">Are you sure you want to exit?</string>
+    <string name="msg_get_date_error">General error, please try again later</string>
+    <string name="msg_old_password_require">Vui lòng nhập mật khẩu cũ</string>
+    <string name="msg_new_password_require">Vui lòng nhập mật khẩu mới</string>
+    <string name="msg_confirm_password_require">Vui lòng xác nhận mật khẩu mới</string>
+    <string name="msg_old_password_invalid">Mật khẩu cũ không chính xác, vui lòng nhập lại</string>
+    <string name="msg_confirm_password_invalid">Xác nhận mật khẩu mới không trùng khớp</string>
+    <string name="msg_new_password_invalid">Mật khẩu mới phải khác mật khẩu cũ</string>
+    <string name="msg_change_password_successfully">Thay đổi mật khẩu thành công</string>
+    <string name="msg_change_password_fail">Thay đổi mật khẩu không thành công, vui lòng đăng xuất và thử lại</string>
+    <string name="msg_reset_password_successfully">Lấy lại mật khẩu thành công, vui lòng kiểm tra email của bạn</string>
+    <string name="msg_register_error">Đăng ký không thành công, vui lòng thử lại</string>
+    <string name="msg_login_error">Đăng nhập không thành công, vui lòng thử lại</string>
+    <string name="msg_email_require">Vui lòng nhập email của bạn</string>
+    <string name="msg_password_require">Vui lòng nhập mật khẩu của bạn</string>
+    <string name="msg_email_invalid">Email của bạn không hợp lệ</string>
+    <string name="msg_name_require">Vui lòng nhập tên của bạn</string>
+    <string name="msg_comment_require">Vui lòng nhập phản hồi của bạn</string>
+    <string name="msg_send_feedback_success">Gửi phản hồi thành công, cám ơn bạn rất nhiều!</string>
+    <string name="msg_name_food_request">Vui lòng nhập tên món ăn bạn yêu cầu</string>
+    <string name="msg_send_request_food_success">Gửi yêu cầu hướng dẫn nấu ăn thành công!</string>
+    <string name="msg_send_review_success">Đánh giá đã được gửi thành công</string>
+    <string name="msg_email_invalid_admin">Email của quản trị viên phải có định dạng …@admin.com</string>
+    <string name="msg_email_invalid_user">Định dạng email của người dùng không hợp lệ</string>
+    <string name="msg_delete_title">Xác nhận xóa</string>
+    <string name="msg_confirm_delete">Bạn có chắc chắn muốn xóa mục này không?</string>
+    <string name="msg_delete_require_successfully">Xoá yêu cầu thành công !!!</string>
+
+    <string name="msg_email_not_verified">Vui lòng xác thực tài khoản</string>
+    <string name="msg_verification_email_sent">Xác thực đã được gửi thành công</string>
+    <string name="msg_verification_email_failed">Xác thực gửi thất bại</string>
+    <string name="msg_input_name_require">Vui lòng nhập tên</string>
+    <string name="msg_input_image_require">Vui lòng nhập hình ảnh</string>
+    <string name="msg_input_url_require">Vui lòng nhập url chi tiết món ăn</string>
+    <string name="msg_edit_category_success">Cập nhật thể loại thành công</string>
+    <string name="msg_add_category_success">Thêm thể loại thành công</string>
+    <string name="msg_delete_category_successfully">Xóa thể loại thành công</string>
+
+    <string name="msg_edit_food_success">Cập nhật món ăn thành công</string>
+    <string name="msg_add_food_success">Thêm món ăn thành công</string>
+    <string name="msg_delete_food_successfully">Xóa món ăn thành công</string>
+    <string name="label_comfirm_password">Nhập lại mật khẩu</string>
+    <string name="hint_confirm_password">Nhập lại mật khẩu của bạn</string>
+    <string name="msg_reset_password_fail">Lấy lại mật khẩu không thành công, vui lòng kiểm tra lại</string>
+    <string name="msg_passwords_do_not_match">Mật khẩu không khớp</string>
+    <string name="msg_email_already_exists">Email đã tồn tại</string>
+    <string name="label_mydishes">Món ăn của tôi</string>
+    <string name="label_calories">Số Calo(*)</string>
+    <string name="msg_input_calo_require">Vui lòng nhập số Calo cho món ăn</string>
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/define_dimen_12"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_shape_round_corner_6"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/define_dimen_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/label_request_food_title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="@dimen/define_dimen_20"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/define_dimen_14">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_request_food_content"
+                android:layout_marginTop="@dimen/define_dimen_10"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <EditText
+                android:id="@+id/edt_food_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_20"
+                android:background="@drawable/bg_white_corner_30_border_gray"
+                android:hint="@string/hint_food_name"
+                android:padding="@dimen/define_dimen_12"
+                android:textColor="@color/textColorPrimary"
+                android:textColorHint="@color/dividerColor"
+                android:textSize="@dimen/text_size_14sp"
+                tools:ignore="Autofill,TextFields" />
+
+            <TextView
+                android:id="@+id/tv_send_request"
+                android:layout_width="@dimen/define_dimen_200"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/define_dimen_10"
+                android:layout_marginTop="@dimen/define_dimen_24"
+                android:background="@color/main_brown"
+                android:gravity="center"
+                android:padding="@dimen/define_dimen_12"
+                android:text="@string/label_send_request"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

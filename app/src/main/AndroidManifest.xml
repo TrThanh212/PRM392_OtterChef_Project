@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.cookbook">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:name="com.app.cookbook.MyApplication"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:exported="true"
+            android:name="com.app.cookbook.activity.SplashActivity">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.MainActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.LoginActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.RegisterActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.ForgotPasswordActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.ChangePasswordActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.FeedbackActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.ContactActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.FoodDetailActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.ListCategoryActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.RatingReviewActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.ListFoodActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.FoodByCategoryActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.SearchActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.FavoriteActivity" />
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.MyDishesActivity" />
+        <activity
+
+            android:exported="false"
+            android:name="com.app.cookbook.activity.HistoryActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.admin.AdminMainActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.admin.AdminAddCategoryActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.admin.AdminAddFoodActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.admin.AdminFoodDetailActivity" />
+
+        <activity
+            android:exported="false"
+            android:name="com.app.cookbook.activity.admin.AdminFoodOfCategoryActivity" />
+    </application>
+
+</manifest>
