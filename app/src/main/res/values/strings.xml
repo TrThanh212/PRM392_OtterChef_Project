@@ -91,6 +91,17 @@
     <string name="label_admin">Quản trị viên</string>
     <string name="label_user">Người dùng</string>
 
+    <string name="label_age">Tuổi:</string>
+    <string name="hint_age">Nhập tuổi...</string>
+    <string name="label_height">Chiều cao (cm):</string>
+    <string name="hint_height">Nhập chiều cao (cm)</string>
+    <string name="label_weight">Cân nặng (kg):</string>
+    <string name="hint_weight">Nhập cân nặng (kg)</string>
+    <string name="button_calculate">Tính toán</string>
+    <string name="result_calories">Kết quả Calo</string>
+    <string name="label_person_total_calories">Số Calo một ngày: %1$.2f</string>
+    <string name="label_total_calories">Tổng Calo bữa ăn : %1$.2f</string>
+
     <string name="label_name">Tên(*)</string>
     <string name="label_image">Hình ảnh(*)</string>
     <string name="label_calories">Số Calo(*)</string>
