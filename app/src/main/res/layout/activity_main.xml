@@ -374,7 +374,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/define_dimen_12"
-                        android:src="@drawable/ic_menu_history" />
+                        android:src="@drawable/ic_menu_dish" />
 
                     <TextView
                         android:layout_width="match_parent"

@@ -184,8 +184,8 @@
             android:id="@+id/img_dishes"
             android:layout_width="@dimen/define_dimen_24"
             android:layout_height="@dimen/define_dimen_24"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/define_dimen_60"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/define_dimen_70"
             android:src="@drawable/ic_dishes" />
     </RelativeLayout>
 

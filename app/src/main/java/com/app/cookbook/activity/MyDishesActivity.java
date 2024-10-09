@@ -3,6 +3,9 @@ package com.app.cookbook.activity;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +28,7 @@ import com.app.cookbook.utils.LocaleHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-
+import androidx.appcompat.app.AlertDialog;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,11 +40,12 @@ public class MyDishesActivity extends BaseActivity {
     private ValueEventListener mValueEventListener;
     private TextView tvTotalCalories,tvPersonTotalCalories;
 
-    private TextView tvCalorieResult;
+   // private TextView tvCalorieResult;
     private EditText etHeight, etWeight, etAge; // Thêm trường nhập tuổi
     private Button btnCalculate;
 
-
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Retrieve the saved language preference
@@ -53,9 +57,14 @@ public class MyDishesActivity extends BaseActivity {
         mBinding = ActivityMydishesBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
 
+        sharedPreferences = getSharedPreferences("DataDishesTDEE", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
         initToolbar();
         initUi();
         loadDataMyDishes();
+
+        loadSavedData();
     }
 
     private void initToolbar() {
@@ -98,15 +107,48 @@ public class MyDishesActivity extends BaseActivity {
         etWeight = findViewById(R.id.et_weight);
         etAge = findViewById(R.id.et_age); // Khởi tạo trường tuổi
         btnCalculate = findViewById(R.id.btn_calculate_bmi);
-        tvCalorieResult = findViewById(R.id.tv_calorie_result);
+        //tvCalorieResult = findViewById(R.id.tv_calorie_result);
 
         // Thiết lập sự kiện cho nút tính toán
         btnCalculate.setOnClickListener(view -> calculateCaloriesOfPerson());
 
         tvPersonTotalCalories = findViewById(R.id.tvPersonTotalCalories);
         tvPersonTotalCalories.setText(getString(R.string.label_person_total_calories, 0.00f));
-    }
 
+        // Add TextWatchers to save data
+        addTextWatchers();
+    }
+// DataDishesTDEE
+    private void addTextWatchers() {
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                editor.putString("age", etAge.getText().toString());
+                editor.putString("height", etHeight.getText().toString());
+                editor.putString("weight", etWeight.getText().toString());
+                editor.apply();
+            }
+        };
+
+        etAge.addTextChangedListener(textWatcher);
+        etHeight.addTextChangedListener(textWatcher);
+        etWeight.addTextChangedListener(textWatcher);
+    }
+    private void loadSavedData() {
+        String savedAge = sharedPreferences.getString("age", "");
+        String savedHeight = sharedPreferences.getString("height", "");
+        String savedWeight = sharedPreferences.getString("weight", "");
+
+        etAge.setText(savedAge);
+        etHeight.setText(savedHeight);
+        etWeight.setText(savedWeight);
+    }
     @SuppressLint("NotifyDataSetChanged")
     private void loadDataMyDishes() {
         mValueEventListener = new ValueEventListener() {
@@ -142,7 +184,7 @@ public class MyDishesActivity extends BaseActivity {
         etWeight.setVisibility(View.GONE);
         etAge.setVisibility(View.GONE);
         btnCalculate.setVisibility(View.GONE);
-        tvCalorieResult.setVisibility(View.GONE);
+        //tvCalorieResult.setVisibility(View.GONE);
         tvTotalCalories.setVisibility(View.GONE);
         tvPersonTotalCalories.setVisibility(View.GONE);
 
@@ -219,21 +261,33 @@ public class MyDishesActivity extends BaseActivity {
         for (Food food : mListFood) {
             totalCalories += food.getCalories();
         }
-
+        // Inflate the popup layout
+        LayoutInflater inflater = getLayoutInflater();
+        View popupView = inflater.inflate(R.layout.popup_calorie_result, null);
+        TextView tvPopupCalorieResult = popupView.findViewById(R.id.tv_calorie_result);
         // So sánh và hiển thị kết quả
         if (totalCalories < averageCalories) {
-            tvCalorieResult.setText("Bạn cần nhiều calo hơn hôm nay.");
+            tvPopupCalorieResult.setText("Bạn cần nhiều calo hơn hôm nay.");
         } else if (totalCalories > averageCalories) {
-            tvCalorieResult.setText("Bạn đã vượt quá lượng calo cho hôm nay.");
+            tvPopupCalorieResult.setText("Bạn đã vượt quá lượng calo cho hôm nay.");
         } else {
-            tvCalorieResult.setText("Bạn đang theo đúng lượng calo cho hôm nay.");
+            tvPopupCalorieResult.setText("Bạn đang theo đúng lượng calo cho hôm nay.");
         }
         //tvPersonTotalCalories.setText("Calories per day: " + averageCalories);
 
         String totalPersonTotalCaloriesText = getString(R.string.label_person_total_calories, averageCalories);
         tvPersonTotalCalories.setText(totalPersonTotalCaloriesText);
 
-        tvCalorieResult.setVisibility(View.VISIBLE); // Hiện TextView sau khi tính toán
+
+        // Create the AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(popupView)
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss());
+
+        // Show the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        //tvCalorieResult.setVisibility(View.VISIBLE); // Hiện TextView sau khi tính toán
     }
 
     @Override
@@ -243,4 +297,5 @@ public class MyDishesActivity extends BaseActivity {
             MyApplication.get(this).foodDatabaseReference().removeEventListener(mValueEventListener);
         }
     }
+
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
@@ -49,6 +49,7 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,29 +60,29 @@
             android:id="@+id/tv_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/define_dimen_10"
             android:text="@string/label_age"
             android:textColor="@color/main_brown"
             android:textSize="@dimen/define_dimen_12"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="@dimen/define_dimen_2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_age"
             android:layout_width="@dimen/define_dimen_200"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_80"
             android:background="@drawable/bg_white_corner_30_border_brown"
             android:hint="@string/hint_age"
             android:inputType="number"
             android:padding="@dimen/define_dimen_8"
             android:textColorHint="@color/textColorAccent"
             android:textSize="@dimen/define_dimen_14"
-            app:layout_constraintStart_toEndOf="@id/tv_age"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="@dimen/define_dimen_80" />
+            app:layout_constraintStart_toEndOf="@id/tv_age"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,29 +96,29 @@
             android:id="@+id/tv_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/define_dimen_10"
             android:text="@string/label_height"
             android:textColor="@color/main_brown"
             android:textSize="@dimen/define_dimen_12"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="@dimen/define_dimen_10" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_height"
             android:layout_width="@dimen/define_dimen_200"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_18"
             android:background="@drawable/bg_white_corner_30_border_brown"
             android:hint="@string/hint_height"
             android:inputType="numberDecimal"
             android:padding="@dimen/define_dimen_8"
             android:textColorHint="@color/textColorAccent"
             android:textSize="@dimen/define_dimen_14"
-            app:layout_constraintStart_toEndOf="@id/tv_height"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="@dimen/define_dimen_18" />
+            app:layout_constraintStart_toEndOf="@id/tv_height"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,29 +132,29 @@
             android:id="@+id/tv_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="@string/label_weight"
             android:textColor="@color/main_brown"
             android:textSize="@dimen/define_dimen_12"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_weight"
             android:layout_width="@dimen/define_dimen_200"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/define_dimen_24"
             android:background="@drawable/bg_white_corner_30_border_brown"
             android:hint="@string/hint_weight"
             android:inputType="numberDecimal"
             android:padding="@dimen/define_dimen_8"
             android:textColorHint="@color/textColorAccent"
             android:textSize="@dimen/define_dimen_14"
-            app:layout_constraintStart_toEndOf="@id/tv_weight"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="@dimen/define_dimen_24" />
+            app:layout_constraintStart_toEndOf="@id/tv_weight"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
@@ -167,11 +168,11 @@
         android:text="@string/button_calculate"
         android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/tv_calorie_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/define_dimen_10"
-        android:text="@string/result_calories"
-        android:visibility="gone" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_calorie_result"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/define_dimen_10"-->
+<!--        android:text="@string/result_calories"-->
+<!--        android:visibility="gone" />-->
 </LinearLayout>

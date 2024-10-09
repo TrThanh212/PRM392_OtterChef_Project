@@ -532,6 +532,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void onClickSignOut() {
+        // Clear user data
+        SharedPreferences sharedPreferences = getSharedPreferences("DataDishesTDEE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        // Sign out
         FirebaseAuth.getInstance().signOut();
         DataStoreManager.setUser(null);
         GlobalFunction.startActivity(this, LoginActivity.class);

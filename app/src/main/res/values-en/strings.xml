@@ -89,7 +89,7 @@
     <string name="label_admin">Administrator</string>
     <string name="label_user">User</string>
 
-    <string name="label_age">Age:</string>
+    <string name="label_age">Tuổi:</string>
     <string name="hint_age">Enter age...</string>
     <string name="label_height">Height (cm):</string>
     <string name="hint_height">Enter height (cm)</string>
