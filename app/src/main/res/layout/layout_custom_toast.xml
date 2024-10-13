@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_custom_toast"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_main_corner_30_gradient"
+    android:padding="@dimen/define_dimen_10"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/define_dimen_20"
+
+    android:src="@drawable/ic_email_24"/>
+
+    <TextView
+        android:id="@+id/tv_custom_toast_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/define_dimen_16"
+        android:layout_marginStart="@dimen/define_dimen_12"
+        android:layout_marginEnd="@dimen/define_dimen_20"
+       />
+</LinearLayout>

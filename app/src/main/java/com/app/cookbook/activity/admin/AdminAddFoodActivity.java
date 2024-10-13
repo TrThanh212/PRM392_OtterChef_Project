@@ -17,6 +17,7 @@ import com.app.cookbook.databinding.ActivityAdminAddFoodBinding;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
 import com.app.cookbook.model.SelectObject;
+import com.app.cookbook.utils.CustomToast;
 import com.app.cookbook.utils.StringUtil;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -129,21 +130,23 @@ public class AdminAddFoodActivity extends BaseActivity {
         String strUrl = binding.edtLink.getText().toString().trim();
 
         if (StringUtil.isEmpty(strName)) {
-            Toast.makeText(this, getString(R.string.msg_input_name_require), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this, getString(R.string.msg_input_name_require));
             return;
         }
 
         if (StringUtil.isEmpty(strImage)) {
-            Toast.makeText(this, getString(R.string.msg_input_image_require), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this, getString(R.string.msg_input_image_require));
             return;
         }
         if (StringUtil.isEmpty(strlCalories)) {
-            Toast.makeText(this, getString(R.string.msg_input_calo_require), Toast.LENGTH_SHORT).show();
+
+            CustomToast.showToast(this, getString(R.string.msg_input_calo_require));
             return;
         }
 
         if (StringUtil.isEmpty(strUrl)) {
-            Toast.makeText(this, getString(R.string.msg_input_url_require), Toast.LENGTH_SHORT).show();
+
+            CustomToast.showToast(this, getString(R.string.msg_input_url_require));
             return;
         }
 
@@ -162,8 +165,7 @@ public class AdminAddFoodActivity extends BaseActivity {
             MyApplication.get(this).foodDatabaseReference()
                     .child(String.valueOf(mFood.getId())).updateChildren(map, (error, ref) -> {
                         showProgressDialog(false);
-                        Toast.makeText(AdminAddFoodActivity.this,
-                                getString(R.string.msg_edit_food_success), Toast.LENGTH_SHORT).show();
+                        CustomToast.showToast(AdminAddFoodActivity.this, getString(R.string.msg_edit_food_success));
                         GlobalFunction.hideSoftKeyboard(this);
                     });
             return;
@@ -184,7 +186,7 @@ public class AdminAddFoodActivity extends BaseActivity {
                     binding.chbFeatured.setChecked(false);
                     binding.spnCategory.setSelection(0);
                     GlobalFunction.hideSoftKeyboard(this);
-                    Toast.makeText(this, getString(R.string.msg_add_food_success), Toast.LENGTH_SHORT).show();
+                    CustomToast.showToast(this, getString(R.string.msg_add_food_success));
                 });
     }
 }

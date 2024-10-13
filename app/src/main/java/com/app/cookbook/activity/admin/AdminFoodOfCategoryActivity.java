@@ -18,6 +18,7 @@ import com.app.cookbook.databinding.ActivityAdminFoodOfCategoryBinding;
 import com.app.cookbook.listener.IOnAdminManagerFoodListener;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
+import com.app.cookbook.utils.CustomToast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -97,10 +98,12 @@ public class AdminFoodOfCategoryActivity extends BaseActivity {
                 .setMessage(getString(R.string.msg_confirm_delete))
                 .setPositiveButton(getString(R.string.action_ok), (dialogInterface, i) ->
                         MyApplication.get(this).foodDatabaseReference()
-                        .child(String.valueOf(food.getId())).removeValue((error, ref) ->
-                                Toast.makeText(this,
-                                        getString(R.string.msg_delete_food_successfully),
-                                        Toast.LENGTH_SHORT).show()))
+                                .child(String.valueOf(food.getId())).removeValue((error, ref) ->
+                                        CustomToast.showToast(this,
+                                                getString(R.string.msg_delete_food_successfully)
+                                        )
+                                )
+                )
                 .setNegativeButton(getString(R.string.action_cancel), null)
                 .show();
     }

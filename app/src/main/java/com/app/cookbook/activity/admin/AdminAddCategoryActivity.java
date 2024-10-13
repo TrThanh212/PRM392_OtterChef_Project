@@ -10,6 +10,7 @@ import com.app.cookbook.constant.Constant;
 import com.app.cookbook.constant.GlobalFunction;
 import com.app.cookbook.databinding.ActivityAdminAddCategoryBinding;
 import com.app.cookbook.model.Category;
+import com.app.cookbook.utils.CustomToast;
 import com.app.cookbook.utils.StringUtil;
 
 import java.util.HashMap;
@@ -64,12 +65,13 @@ public class AdminAddCategoryActivity extends BaseActivity {
         String strImage = binding.edtImage.getText().toString().trim();
 
         if (StringUtil.isEmpty(strName)) {
-            Toast.makeText(this, getString(R.string.msg_input_name_require), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, getString(R.string.msg_input_name_require), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this, getString(R.string.msg_input_name_require));
             return;
         }
 
         if (StringUtil.isEmpty(strImage)) {
-            Toast.makeText(this, getString(R.string.msg_input_image_require), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this, getString(R.string.msg_input_image_require));
             return;
         }
 
@@ -83,8 +85,8 @@ public class AdminAddCategoryActivity extends BaseActivity {
             MyApplication.get(this).categoryDatabaseReference()
                     .child(String.valueOf(mCategory.getId())).updateChildren(map, (error, ref) -> {
                 showProgressDialog(false);
-                Toast.makeText(AdminAddCategoryActivity.this,
-                        getString(R.string.msg_edit_category_success), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(AdminAddCategoryActivity.this, getString(R.string.msg_edit_category_success), Toast.LENGTH_SHORT).show();
+                CustomToast.showToast(AdminAddCategoryActivity.this, getString(R.string.msg_edit_category_success));
                 GlobalFunction.hideSoftKeyboard(this);
             });
             return;
@@ -100,7 +102,8 @@ public class AdminAddCategoryActivity extends BaseActivity {
             binding.edtName.setText("");
             binding.edtImage.setText("");
             GlobalFunction.hideSoftKeyboard(this);
-            Toast.makeText(this, getString(R.string.msg_add_category_success), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, getString(R.string.msg_add_category_success), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this, getString(R.string.msg_add_category_success));
         });
     }
 }

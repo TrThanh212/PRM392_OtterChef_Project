@@ -24,6 +24,7 @@ import com.app.cookbook.databinding.ActivityMydishesBinding;
 import com.app.cookbook.listener.IOnClickFoodListener;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
+import com.app.cookbook.utils.CustomToast;
 import com.app.cookbook.utils.LocaleHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -222,7 +223,8 @@ public class MyDishesActivity extends BaseActivity {
         String ageStr = etAge.getText().toString(); // Lấy tuổi
 
         if (heightStr.isEmpty() || weightStr.isEmpty() || ageStr.isEmpty()) {
-            Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin.", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin.", Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this,"Vui lòng nhập đầy đủ thông tin.");
             return;
         }
 
@@ -235,22 +237,22 @@ public class MyDishesActivity extends BaseActivity {
             weight = Float.parseFloat(weightStr);
             age = Integer.parseInt(ageStr);
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Vui lòng nhập giá trị hợp lệ.", Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this,"Vui lòng nhập giá trị hợp lệ.");
             return;
         }
 
         if (height <= 0 || height > 300) {
-            Toast.makeText(this, "Chiều cao không hợp lệ.", Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this,"Chiều cao không hợp lệ.");
             return;
         }
 
         if (weight <= 0 || weight > 500) {
-            Toast.makeText(this, "Cân nặng không hợp lệ.", Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this,"Cân nặng không hợp lệ.");
             return;
         }
 
         if (age <= 0 || age > 120) {
-            Toast.makeText(this, "Tuổi không hợp lệ.", Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(this,"Tuổi không hợp lệ.");
             return;
         }
 

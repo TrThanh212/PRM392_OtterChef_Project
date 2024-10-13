@@ -16,6 +16,7 @@ import com.app.cookbook.constant.GlobalFunction;
 import com.app.cookbook.databinding.ActivityRegisterBinding;
 import com.app.cookbook.model.User;
 import com.app.cookbook.prefs.DataStoreManager;
+import com.app.cookbook.utils.CustomToast;
 import com.app.cookbook.utils.LocaleHelper;
 import com.app.cookbook.utils.StringUtil;
 import com.google.firebase.auth.FirebaseAuth;
@@ -174,10 +175,8 @@ private void onClickValidateRegister() {
                                     .addOnCompleteListener(emailTask -> {
                                         if (emailTask.isSuccessful()) {
                                             // Thông báo gửi email xác thực thành công
-                                            Toast.makeText(RegisterActivity.this,
-                                                    "Vui lòng kiểm tra email để xác thực tài khoản!",
-                                                    Toast.LENGTH_LONG).show();
-
+                                           // Toast.makeText(RegisterActivity.this, "Vui lòng kiểm tra email để xác thực tài khoản!", Toast.LENGTH_LONG).show();
+                                            CustomToast.showToastLong(RegisterActivity.this, "Vui lòng kiểm tra email để xác thực tài khoản!");
                                             // Lưu thông tin người dùng (đặt cờ admin nếu cần)
                                             User userObject = new User(firebaseUser.getEmail(), password);
                                             if (mActivityRegisterBinding.rdbAdmin.isChecked()) {
@@ -193,9 +192,8 @@ private void onClickValidateRegister() {
                                             finish();
                                         } else {
                                             // Thông báo lỗi khi gửi email
-                                            Toast.makeText(RegisterActivity.this,
-                                                    "Gửi email xác thực thất bại.",
-                                                    Toast.LENGTH_SHORT).show();
+                                            //Toast.makeText(RegisterActivity.this,"Gửi email xác thực thất bại.", Toast.LENGTH_SHORT).show();
+                                       CustomToast.showToast(RegisterActivity.this, "Gửi email xác thực thất bại.");
                                         }
                                     });
                         }

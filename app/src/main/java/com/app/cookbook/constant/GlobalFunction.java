@@ -20,6 +20,7 @@ import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
 import com.app.cookbook.model.UserInfo;
 import com.app.cookbook.prefs.DataStoreManager;
+import com.app.cookbook.utils.CustomToast;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
@@ -127,7 +128,8 @@ public class GlobalFunction {
     }
 
     public static void showToastMessage(Context context, String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        CustomToast.showToast(context, message);
     }
 
     public static String getTextSearch(String input) {

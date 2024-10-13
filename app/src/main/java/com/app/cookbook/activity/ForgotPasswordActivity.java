@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.app.cookbook.R;
 import com.app.cookbook.databinding.ActivityForgotPasswordBinding;
+import com.app.cookbook.utils.CustomToast;
 import com.app.cookbook.utils.LocaleHelper;
 import com.app.cookbook.utils.StringUtil;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,11 +77,10 @@ public class ForgotPasswordActivity extends BaseActivity {
         if (!isEnableButtonResetPassword) return;
         String strEmail = mActivityForgotPasswordBinding.edtEmail.getText().toString().trim();
         if (StringUtil.isEmpty(strEmail)) {
-            Toast.makeText(ForgotPasswordActivity.this,
-                    getString(R.string.msg_email_require), Toast.LENGTH_SHORT).show();
+            CustomToast.showToast(ForgotPasswordActivity.this, getString(R.string.msg_email_require));
         } else if (!StringUtil.isValidEmail(strEmail)) {
-            Toast.makeText(ForgotPasswordActivity.this,
-                    getString(R.string.msg_email_invalid), Toast.LENGTH_SHORT).show();
+
+            CustomToast.showToast(ForgotPasswordActivity.this, getString(R.string.msg_email_invalid));
         } else {
             resetPassword(strEmail);
         }
@@ -93,20 +93,14 @@ public class ForgotPasswordActivity extends BaseActivity {
                 .addOnCompleteListener(task -> {
                     showProgressDialog(false);
                     if (task.isSuccessful()) {
-                        Toast.makeText(ForgotPasswordActivity.this,
-                                getString(R.string.msg_reset_password_successfully),
-                                Toast.LENGTH_SHORT).show();
+                        CustomToast.showToast(ForgotPasswordActivity.this, getString(R.string.msg_reset_password_successfully));
                         mActivityForgotPasswordBinding.edtEmail.setText("");
                     } else {
-                        Toast.makeText(ForgotPasswordActivity.this,
-                                getString(R.string.msg_reset_password_fail),
-                                Toast.LENGTH_SHORT).show();
+                        CustomToast.showToast(ForgotPasswordActivity.this, getString(R.string.msg_reset_password_fail));
                     }
                 }).addOnFailureListener(e -> {
                     showProgressDialog(false);
-                    Toast.makeText(ForgotPasswordActivity.this,
-                            getString(R.string.msg_reset_password_fail),
-                            Toast.LENGTH_SHORT).show();
+                    CustomToast.showToast(ForgotPasswordActivity.this, getString(R.string.msg_reset_password_fail));
                     e.printStackTrace(); // Log lỗi
                 });
     }
