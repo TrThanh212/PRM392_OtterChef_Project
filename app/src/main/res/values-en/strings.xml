@@ -161,7 +161,8 @@
     <string name="label_mydishes">My dishes</string>
     <string name="label_calories">Number of Calories(*)</string>
     <string name="msg_input_calo_require">" Please enter the Calories number for the dish"</string>
-
+    <string name="label_calories_number">Numer of Calories: %1$.2f</string>
+    <string name="label_category_name">Category: %1$s</string>
 
 
 </resources>

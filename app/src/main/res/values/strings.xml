@@ -105,7 +105,8 @@
     <string name="label_name">Tên(*)</string>
     <string name="label_image">Hình ảnh(*)</string>
     <string name="label_calories">Số Calo(*)</string>
-
+    <string name="label_calories_number">Số Calo: %1$.2f</string>
+    <string name="label_category_name">Thể loại: %1$s</string>
     <string name="label_food_category">Category(*)</string>
     <string name="label_add_category">Thêm thể loại</string>
     <string name="label_update_category">Cập nhật thể loại</string>

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 
 import com.app.cookbook.MyApplication;
 import com.app.cookbook.R;
@@ -29,22 +31,22 @@ public class LoginActivity extends BaseActivity {
 
     private ActivityLogInBinding mActivityLogInBinding;
     private boolean isEnableButtonLogin;
+    private boolean isPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Retrieve the saved language preference
-        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
-        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
-        LocaleHelper.setLocale(this, languageCode);
-
         super.onCreate(savedInstanceState);
         mActivityLogInBinding = ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(mActivityLogInBinding.getRoot());
 
+        // Các sự kiện khác
         initListener();
 
 
+
     }
+
+
 
     private void initListener() {
 
@@ -74,6 +76,21 @@ public class LoginActivity extends BaseActivity {
                     mActivityLogInBinding.btnLogin.setBackgroundResource(R.drawable.bg_button_disable_corner_10);
                 }
             }
+        });
+        mActivityLogInBinding.imgTogglePassword.setOnClickListener(v -> {
+            if (isPasswordVisible) {
+                // Nếu mật khẩu đang được hiển thị, ẩn nó đi
+                mActivityLogInBinding.edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                mActivityLogInBinding.imgTogglePassword.setImageResource(R.drawable.ic_eye_closed); // Đổi sang icon con mắt đóng
+                isPasswordVisible = false;
+            } else {
+                // Nếu mật khẩu đang bị ẩn, hiển thị nó
+                mActivityLogInBinding.edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                mActivityLogInBinding.imgTogglePassword.setImageResource(R.drawable.ic_eye_open); // Đổi sang icon con mắt mở
+                isPasswordVisible = true;
+            }
+            // Đưa con trỏ về cuối cùng của văn bản để không bị nhảy vị trí
+            mActivityLogInBinding.edtPassword.setSelection(mActivityLogInBinding.edtPassword.length());
         });
 
         mActivityLogInBinding.edtPassword.addTextChangedListener(new TextWatcher() {
@@ -118,6 +135,10 @@ public class LoginActivity extends BaseActivity {
             String newLanguage = "vi".equals(currentLanguage) ? "en" : "vi";
             LocaleHelper.setLocale(this, newLanguage);
             recreate(); // Restart the activity to apply the new language
+
+            // Set the background resource to bg_white_corner_30_border_main
+            mActivityLogInBinding.edtEmail.setBackgroundResource(R.drawable.bg_white_corner_30_border_main);
+            mActivityLogInBinding.edtPassword.setBackgroundResource(R.drawable.bg_white_corner_30_border_main);
         });
     }
 

@@ -160,4 +160,6 @@
     <string name="label_mydishes">Món ăn của tôi</string>
     <string name="label_calories">Số Calo(*)</string>
     <string name="msg_input_calo_require">Vui lòng nhập số Calo cho món ăn</string>
+    <string name="label_calories_number">Số Calo: %1$.2f</string>
+    <string name="label_category_name">Thể loại: %1$s</string>
 </resources>

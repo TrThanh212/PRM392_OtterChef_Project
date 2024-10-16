@@ -42,7 +42,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-              >
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,6 +70,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- Email input field (kept as it is) -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,18 +80,20 @@
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_12sp"/>
 
+            <!-- Password input field with the eye icon -->
+
             <EditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/define_dimen_5"
-                android:padding="@dimen/define_dimen_14"
                 android:background="@drawable/bg_white_corner_30_border_brown"
                 android:hint="@string/hint_email"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:textColorHint="@color/textColorAccent"
+                android:padding="@dimen/define_dimen_18"
                 android:textColor="@color/textColorHeading"
+                android:textColorHint="@color/textColorAccent"
                 android:textSize="@dimen/text_size_14sp"
                 tools:ignore="Autofill" />
 
@@ -103,23 +106,35 @@
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size_12sp"/>
 
-            <EditText
-                android:id="@+id/edt_password"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/define_dimen_5"
-                android:background="@drawable/bg_white_corner_30_border_brown"
-                android:hint="@string/hint_password"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:padding="@dimen/define_dimen_14"
-                android:textColor="@color/textColorHeading"
-                android:textColorHint="@color/textColorAccent"
-                android:textSize="@dimen/text_size_14sp"
-                tools:ignore="Autofill" />
+                android:layout_marginTop="@dimen/define_dimen_5">
 
+                <EditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_white_corner_30_border_brown"
+                    android:hint="@string/hint_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/define_dimen_18"
+                    android:textColor="@color/textColorHeading"
+                    android:textColorHint="@color/textColorAccent"
+                    android:textSize="@dimen/text_size_14sp"
+                    tools:ignore="Autofill" />
 
-
+                <ImageView
+                    android:id="@+id/img_toggle_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginRight="@dimen/define_dimen_10"
+                    android:src="@drawable/ic_eye_closed"
+                    android:layout_gravity="end|center_vertical" />
+            </FrameLayout>
+            <!-- Login button (kept as it is) -->
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"

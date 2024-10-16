@@ -6,4 +6,5 @@ public interface IOnAdminManagerFoodListener {
     void onClickUpdateFood(Food food);
     void onClickDeleteFood(Food food);
     void onClickDetailFood(Food food);
+
 }

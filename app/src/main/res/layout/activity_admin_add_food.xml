@@ -8,9 +8,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:alpha="0.5"
         android:scaleType="fitCenter"
         android:src="@drawable/otterchef"
-        android:alpha="0.5"
         tools:ignore="ContentDescription" />
 
     <RelativeLayout
@@ -19,14 +19,14 @@
 
         <include
             android:id="@+id/layout_toolbar"
-            layout="@layout/layout_toolbar"/>
+            layout="@layout/layout_toolbar" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="@dimen/define_dimen_10"
-            android:background="@color/semi_transparent_white">
+            android:background="@color/semi_transparent_white"
+            android:layout_marginTop="@dimen/define_dimen_80"
+            android:padding="@dimen/define_dimen_10">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,14 +34,13 @@
                 android:orientation="vertical">
 
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_14sp"
+                    android:text="@string/label_name"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:text="@string/label_name"/>
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edt_name"
@@ -53,16 +52,16 @@
                     android:inputType="text"
                     android:padding="@dimen/define_dimen_12"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="@dimen/text_size_14sp"/>
+                    android:textSize="@dimen/text_size_14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_14sp"
                     android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="@string/label_food_category"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:text="@string/label_food_category"/>
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spn_category"
@@ -70,18 +69,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/define_dimen_4"
                     android:background="@color/transparent"
+                    android:scrollbars="none"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:scrollbars="none" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_14sp"
                     android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="@string/label_calories"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:text="@string/label_calories"/>
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edt_calo"
@@ -98,11 +97,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_14sp"
                     android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="@string/label_image"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:text="@string/label_image"/>
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edt_image"
@@ -119,11 +118,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/text_size_14sp"
                     android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="@string/label_food_link_url"
                     android:textColor="@color/main_brown"
-                    android:textStyle="bold"
-                    android:text="@string/label_food_link_url"/>
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edt_link"
@@ -137,6 +136,130 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="@dimen/text_size_14sp" />
 
+                <!-- New input fields for FoodDetails -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtIngredient"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Enter ingredient"
+                            android:padding="8dp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/btnAddIngredient"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_menu_dish"
+                            android:contentDescription="Add Ingredient"
+                            android:padding="8dp"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvIngredients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="Instructions"
+                    android:textColor="@color/main_brown"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_4"
+                    android:background="@drawable/bg_white_corner_6_border_brown"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/define_dimen_12"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="Preparation Time (minutes)"
+                    android:textColor="@color/main_brown"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_preparation_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_4"
+                    android:background="@drawable/bg_white_corner_6_border_brown"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="@dimen/define_dimen_12"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="Cooking Time (minutes)"
+                    android:textColor="@color/main_brown"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_cooking_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_4"
+                    android:background="@drawable/bg_white_corner_6_border_brown"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="@dimen/define_dimen_12"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_10"
+                    android:text="Servings"
+                    android:textColor="@color/main_brown"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_servings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/define_dimen_4"
+                    android:background="@drawable/bg_white_corner_6_border_brown"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:padding="@dimen/define_dimen_12"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_size_14sp" />
+                <!--                End -->
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,9 +271,9 @@
                         android:id="@+id/chb_featured"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/label_food_featured"
                         android:textColor="@color/main_brown"
-                        android:textStyle="bold"
-                        android:text="@string/label_food_featured" />
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <Button

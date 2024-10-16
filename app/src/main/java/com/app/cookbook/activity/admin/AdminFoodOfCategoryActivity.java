@@ -76,6 +76,7 @@ public class AdminFoodOfCategoryActivity extends BaseActivity {
             public void onClickDetailFood(Food food) {
                 goToFoodDetail(food);
             }
+
         });
         binding.rcvFood.setAdapter(mAdminFoodAdapter);
     }

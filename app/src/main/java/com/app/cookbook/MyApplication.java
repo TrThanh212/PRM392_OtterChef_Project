@@ -52,6 +52,9 @@ public class MyApplication extends Application {
     public DatabaseReference countFoodDatabaseReference(long foodId) {
         return mFirebaseDatabase.getReference("/food/" + foodId + "/count");
     }
+    public DatabaseReference foodDatabaseReference(long foodId) {
+        return mFirebaseDatabase.getReference("/food/" + foodId + "/foodDetails");
+    }
     public DatabaseReference userDatabaseReference() {
         return mFirebaseDatabase.getReference("/user");
     }

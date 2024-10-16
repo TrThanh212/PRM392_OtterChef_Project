@@ -19,11 +19,12 @@ public class Food implements Serializable {
     private long categoryId;
     private String categoryName;
     private double calories;
+    private FoodDetails foodDetails;
 
     public Food() {
     }
 
-    public Food(long id, String name, String image, String url, boolean featured, long categoryId, String categoryName, double calories) {
+    public Food(long id, String name, String image, String url, boolean featured, long categoryId, String categoryName, double calories, FoodDetails foodDetails) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -31,8 +32,12 @@ public class Food implements Serializable {
         this.featured = featured;
         this.categoryId = categoryId;
         this.categoryName = categoryName;
-        this.calories = calories; // Initialize new field
+        this.calories = calories;
+        this.foodDetails = foodDetails;
     }
+
+    // Getters and setters for all fields, including the new foodDetail field
+
     public long getId() {
         return id;
     }
@@ -163,11 +168,19 @@ public class Food implements Serializable {
         }
     }
 
-    public double getCalories() { // Getter for calories
+    public double getCalories() {
         return calories;
     }
 
-    public void setCalories(double calories) { // Setter for calories
+    public void setCalories(double calories) {
         this.calories = calories;
+    }
+
+    public FoodDetails getFoodDetail() {
+        return foodDetails;
+    }
+
+    public void setFoodDetail(FoodDetails foodDetail) {
+        this.foodDetails = foodDetail;
     }
 }

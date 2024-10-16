@@ -21,6 +21,7 @@ import com.app.cookbook.MyApplication;
 import com.app.cookbook.R;
 import com.app.cookbook.activity.admin.AdminAddFoodActivity;
 import com.app.cookbook.activity.admin.AdminFoodDetailActivity;
+import com.app.cookbook.activity.admin.AdminFoodRecipeActivity;
 import com.app.cookbook.adapter.admin.AdminFoodAdapter;
 import com.app.cookbook.constant.Constant;
 import com.app.cookbook.constant.GlobalFunction;
@@ -73,6 +74,7 @@ public class AdminFoodFragment extends Fragment {
             public void onClickDetailFood(Food food) {
                 goToFoodDetail(food);
             }
+
         });
         binding.rcvFood.setAdapter(mAdminFoodAdapter);
         binding.rcvFood.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -123,7 +125,8 @@ public class AdminFoodFragment extends Fragment {
     private void goToFoodDetail(@NonNull Food food) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.OBJECT_FOOD, food);
-        GlobalFunction.startActivity(getActivity(), AdminFoodDetailActivity.class, bundle);
+        //GlobalFunction.startActivity(getActivity(), AdminFoodDetailActivity.class, bundle);
+        GlobalFunction.startActivity(getActivity(), AdminFoodRecipeActivity.class, bundle);
     }
 
     private void onClickAddFood() {
