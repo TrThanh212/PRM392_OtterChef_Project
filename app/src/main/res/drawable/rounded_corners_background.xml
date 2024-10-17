@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:bottom="25dp">
+        <shape>
+            <corners android:topLeftRadius="16dp" android:topRightRadius="16dp" android:bottomLeftRadius="16dp" android:bottomRightRadius="16dp" />
+            <solid android:color="@color/main_brown" />
+        </shape>
+    </item>
+    <item android:bottom="60dp">
+        <shape>
+            <corners android:topLeftRadius="16dp" android:topRightRadius="16dp" android:bottomLeftRadius="16dp" android:bottomRightRadius="16dp" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>

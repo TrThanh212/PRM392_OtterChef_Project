@@ -101,6 +101,7 @@
     <string name="label_total_calories">Total meal calories: %1$.2f</string>
     <string name="label_name">Name (*)</string>
     <string name="label_image">Image (*)</string>
+    <string name="label_preparation_time">Preparation time: %d minutes</string>
     <string name="label_food_category">Category (*)</string>
     <string name="label_add_category">Add Category</string>
     <string name="label_update_category">Update Category</string>
@@ -163,6 +164,12 @@
     <string name="msg_input_calo_require">" Please enter the Calories number for the dish"</string>
     <string name="label_calories_number">Numer of Calories: %1$.2f</string>
     <string name="label_category_name">Category: %1$s</string>
+    <string name="label_foodrecipe">How to Cook</string>
+    <string name="label_food_ingredients">Ingredients of the dish</string>
+    <string name="label_cooking_time">Cooking time: %d minutes</string>
+    <string name="label_servings">Servings: %d</string>
+    <string name="label_time">%d minutes</string>
+    <string name="label_number">%d</string>
 
 
 </resources>

@@ -99,6 +99,7 @@
     <string name="label_total_calories">Tổng Calo bữa ăn : %1$.2f</string>
     <string name="label_name">Tên(*)</string>
     <string name="label_image">Hình ảnh(*)</string>
+    <string name="label_preparation_time">Thời gian chuẩn bị: %d minutes</string>
     <string name="label_food_category">Category(*)</string>
     <string name="label_add_category">Thêm thể loại</string>
     <string name="label_update_category">Cập nhật thể loại</string>
@@ -162,4 +163,10 @@
     <string name="msg_input_calo_require">Vui lòng nhập số Calo cho món ăn</string>
     <string name="label_calories_number">Số Calo: %1$.2f</string>
     <string name="label_category_name">Thể loại: %1$s</string>
+    <string name="label_foodrecipe">Hướng dẫn nấu ăn</string>
+    <string name="label_food_ingredients">Thành phần của món ăn</string>
+    <string name="label_cooking_time">Thời gian nấu: %d minutes</string>
+    <string name="label_servings">Phục vụ: %d</string>
+    <string name="label_time">%d phút</string>
+    <string name="label_number">%d</string>
 </resources>

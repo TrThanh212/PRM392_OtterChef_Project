@@ -63,6 +63,9 @@
     <string name="label_favorite">Yêu thích</string>
     <string name="label_history">Lịch sử</string>
     <string name="label_mydishes">Món ăn của tôi</string>
+    <string name="label_food_ingredients">Thành phần của món ăn</string>
+
+
 
     <string name="label_feedback">Phản hồi</string>
     <string name="label_contact">Liên hệ</string>
@@ -107,7 +110,13 @@
     <string name="label_calories">Số Calo(*)</string>
     <string name="label_calories_number">Số Calo: %1$.2f</string>
     <string name="label_category_name">Thể loại: %1$s</string>
-    <string name="label_food_category">Category(*)</string>
+    <string name="label_preparation_time">Thời gian chuẩn bị: %d phút</string>
+    <string name="label_cooking_time">Thời gian nấu: %d phút</string>
+    <string name="label_time">%d phút</string>
+    <string name="label_number">%d</string>
+
+    <string name="label_servings">Khẩu phần: %d</string>
+    <string name="label_food_category">Thể loại(*)</string>
     <string name="label_add_category">Thêm thể loại</string>
     <string name="label_update_category">Cập nhật thể loại</string>
     <string name="label_featured">Nổi bật:</string>
@@ -169,5 +178,6 @@
     <string name="msg_add_food_success">Thêm món ăn thành công</string>
     <string name="msg_delete_food_successfully">Xóa món ăn thành công</string>
     <string name="label_request_food_content">Hãy cho Otter biết món ăn bạn muốn thêm vào ứng dụng nha!</string>
+    <string name="label_foodrecipe">Hướng dẫn nấu ăn</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.app.cookbook.activity.admin;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.app.cookbook.constant.GlobalFunction;
 import com.app.cookbook.databinding.ActivityAdminAddCategoryBinding;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.utils.CustomToast;
+import com.app.cookbook.utils.LocaleHelper;
 import com.app.cookbook.utils.StringUtil;
 
 import java.util.HashMap;
@@ -24,6 +26,10 @@ public class AdminAddCategoryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Retrieve the saved language preference
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
+        LocaleHelper.setLocale(this, languageCode);
         super.onCreate(savedInstanceState);
         binding = ActivityAdminAddCategoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

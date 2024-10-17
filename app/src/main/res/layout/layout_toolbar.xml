@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:gravity="center_vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:ignore="UseCompoundDrawables">
+    android:background="@android:color/transparent"
+    android:padding="0dp"
+    android:layout_margin="0dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
             android:layout_centerVertical="true"
             android:padding="@dimen/define_dimen_10"
             android:src="@drawable/ic_back"
-            android:textColor="@color/main_brown"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -33,7 +31,7 @@
             android:fontFamily="@font/kawaiirt_monashine_custom"
             android:text="@string/app_name"
             android:textColor="@color/main_brown"
-            android:textSize="30dp" />
+            android:textSize="@dimen/define_dimen_24" />
 
     </RelativeLayout>
 

@@ -1,6 +1,7 @@
 package com.app.cookbook.activity.admin;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.app.cookbook.activity.BaseActivity;
 import com.app.cookbook.constant.Constant;
 import com.app.cookbook.databinding.ActivityAdminFoodDetailBinding;
 import com.app.cookbook.model.Food;
+import com.app.cookbook.utils.LocaleHelper;
 import com.app.cookbook.utils.StringUtil;
 
 public class AdminFoodDetailActivity extends BaseActivity {
@@ -22,6 +24,10 @@ public class AdminFoodDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Retrieve the saved language preference
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
+        LocaleHelper.setLocale(this, languageCode);
         super.onCreate(savedInstanceState);
         mBinding = ActivityAdminFoodDetailBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());

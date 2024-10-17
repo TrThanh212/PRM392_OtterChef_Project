@@ -1,5 +1,6 @@
 package com.app.cookbook.activity.admin;
 
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import com.app.cookbook.R;
 import com.app.cookbook.activity.BaseActivity;
 import com.app.cookbook.adapter.admin.AdminViewPagerAdapter;
 import com.app.cookbook.databinding.ActivityAdminMainBinding;
+import com.app.cookbook.utils.LocaleHelper;
 
 import java.util.Locale;
 
@@ -22,6 +24,10 @@ public class AdminMainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Retrieve the saved language preference
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
+        LocaleHelper.setLocale(this, languageCode);
         super.onCreate(savedInstanceState);
         mBinding = ActivityAdminMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());

@@ -2,6 +2,7 @@ package com.app.cookbook.activity.admin;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.app.cookbook.listener.IOnAdminManagerFoodListener;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
 import com.app.cookbook.utils.CustomToast;
+import com.app.cookbook.utils.LocaleHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -35,6 +37,10 @@ public class AdminFoodOfCategoryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Retrieve the saved language preference
+        SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
+        LocaleHelper.setLocale(this, languageCode);
         super.onCreate(savedInstanceState);
         binding = ActivityAdminFoodOfCategoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
