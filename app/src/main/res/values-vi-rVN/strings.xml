@@ -169,4 +169,5 @@
     <string name="label_servings">Phục vụ: %d</string>
     <string name="label_time">%d phút</string>
     <string name="label_number">%d</string>
+    <string name="label_go_to_food_detail">Hướng dẫn chi tiết</string>
 </resources>

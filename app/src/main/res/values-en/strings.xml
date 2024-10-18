@@ -170,6 +170,7 @@
     <string name="label_servings">Servings: %d</string>
     <string name="label_time">%d minutes</string>
     <string name="label_number">%d</string>
+    <string name="label_go_to_food_detail">Detailed instructions</string>
 
 
 </resources>

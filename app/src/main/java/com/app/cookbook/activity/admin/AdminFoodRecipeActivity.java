@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class AdminFoodRecipeActivity extends AppCompatActivity {
-
+    private long mFoodId;
     private ImageView ivFoodImage;
     private TextView tvFoodName, tvFoodCalories, tvFoodCategory, tvFoodInstructionsContent, tvPreparationTime, tvCookingTime, tvServings;
     private RecyclerView recyclerViewIngredients;

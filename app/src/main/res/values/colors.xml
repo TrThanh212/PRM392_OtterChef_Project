@@ -27,4 +27,5 @@
     <color name="black_overlay">#667C7474</color>
     <color name="main_brown">#a3745e</color>
     <color name="semi_transparent_white">#80ffffff</color>
+    <color name="ripple_effect">#33FFFFFF</color>
 </resources>

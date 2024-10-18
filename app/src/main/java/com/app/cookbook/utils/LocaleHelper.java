@@ -24,4 +24,9 @@ public class LocaleHelper {
         editor.putString("language", languageCode);
         editor.apply();
     }
+    public static void applySavedLocale(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        String languageCode = prefs.getString("language", "vi"); // Default to Vietnamese
+        LocaleHelper.setLocale(context, languageCode);
+    }
 }

@@ -64,7 +64,7 @@
     <string name="label_history">Lịch sử</string>
     <string name="label_mydishes">Món ăn của tôi</string>
     <string name="label_food_ingredients">Thành phần của món ăn</string>
-
+<string name="label_go_to_food_detail">Hướng dẫn chi tiết</string>
 
 
     <string name="label_feedback">Phản hồi</string>

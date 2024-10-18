@@ -15,7 +15,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.app.cookbook.MyApplication;
 import com.app.cookbook.activity.FoodByCategoryActivity;
-import com.app.cookbook.activity.FoodDetailActivity;
+import com.app.cookbook.activity.FoodRecipeActivity;
 import com.app.cookbook.model.Category;
 import com.app.cookbook.model.Food;
 import com.app.cookbook.model.UserInfo;
@@ -141,7 +141,8 @@ public class GlobalFunction {
     public static void goToFoodDetail(Context context, long foodId) {
         Bundle bundle = new Bundle();
         bundle.putLong(Constant.FOOD_ID, foodId);
-        startActivity(context, FoodDetailActivity.class, bundle);
+        //startActivity(context, FoodDetailActivity.class, bundle);
+        startActivity(context, FoodRecipeActivity.class, bundle);
     }
 
     public static void goToFoodByCategory(Context context, Category category) {
